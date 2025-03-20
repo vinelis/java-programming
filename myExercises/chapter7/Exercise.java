@@ -13,26 +13,13 @@ public class Exercise {
         System.out.println("Give me a number an i will give you a day of the week ");
         number = scanner.nextInt();
         scanner.close();
-
+        dayByNumber(DAYSOFTHEWEEK,number);
 
     }
 
-    public static int lenghtArray(String[] array){
-        int out;
-        int i = 0;
-
-        while(){
-
-        }
+    public static void dayByNumber(String[] array, int number){
+        System.out.println("Your day of the week is " + array[number - 1]);
     }
-
-
-    /*
-    public static String dayByNumber(String[] array, int number){
-
-        for(int i =0, i)
-    }
-     */
 
 }
 
