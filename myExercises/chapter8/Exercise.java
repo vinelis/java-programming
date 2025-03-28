@@ -12,13 +12,8 @@ public class Exercise {
     public static void main(String[] args){
 
 
-        System.out.println("Give me your username");
-        String username = scanner.next();
-        System.out.println("If you want to change yout password, first i need the old one");
-        String oldPassword = scanner.next();
         System.out.println("Give me the new password");
         String password = scanner.next();
-        scanner.close();
 
         isAValidPassword(password);
 
@@ -51,16 +46,21 @@ public class Exercise {
     }
 
     public static boolean containTheUsername (String password){
+        System.out.println("Give me your username");
+        String username = scanner.next();
         return password.contains(username);
     }
 
     public static boolean isEqualTheOldPassword (String password){
+        System.out.println("If you want to change yout password, first i need the old one");
+        String oldPassword = scanner.next();
+        scanner.close();
         return password.contains(oldPassword);
     }
 
     public static void isAValidPassword(String password){
 
-        if(containUpperCase(password)  && containAtLeast8Characters(password) && isEqualTheOldPassword(password) && containTheUsername(password)){
+        if(  !(containTheUsername(password)) && !(isEqualTheOldPassword(password)) && containUpperCase(password)  && containAtLeast8Characters(password)  && containASpecialCharacter(password)  ){
             System.out.println("Your password is accepted");
         }
         else{
